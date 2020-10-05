@@ -7,7 +7,7 @@ public class Catch : MonoBehaviour
     public Transform theDest;
     private void OnMouseDown()
     {
-        GetComponent<Collider>().enabled = false;
+        GetComponent<SphereCollider>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
         this.transform.position = theDest.position;
         this.transform.parent = GameObject.Find("Destination").transform;
@@ -16,6 +16,6 @@ public class Catch : MonoBehaviour
     {
         this.transform.parent = null;
         GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<Collider>().enabled = true;
+        GetComponent<SphereCollider>().enabled = true;
     }
 }

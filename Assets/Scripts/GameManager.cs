@@ -1,20 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
-public class TouchInput : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
 
     public Color startColor;
     public Color darkRoomColor;
     public Light _light;
+    public int numPhotos;
 
     public bool hasPhoto = false;
     public bool hadPhoto = false;
 
+    public GameObject photoObj;
+
+    public List<GameObject> photoList;
+
     private void Start() {
-        _light.color = startColor;     
+        photoList = new List<GameObject>();
+        _light.color = startColor;
+        float yVal = .65f;
+        for (int i=0; i<numPhotos; i++) {
+            Instantiate(photoObj, new Vector3(-3.7f, yVal, 4.7f), Quaternion.identity);
+            yVal += .05f;
+            photoObj.GetComponent<PhotoScript>().id = i;
+            photoObj.GetComponent<PhotoScript>().stage = 0;
+        }
     }
 
     

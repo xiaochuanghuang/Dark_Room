@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Catch : MonoBehaviour
 {
-    public TouchInput TI;
+    public GameManager GM;
     private Vector3 mOffset;
     private float mZCoord;
 
+    private void Start()
+    {
+        GM = FindObjectOfType<GameManager>();
+    }
+
     void OnMouseDown() {
-        mZCoord = Camera.main.WorldToScreenPoint(
-        gameObject.transform.position).z;
+        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
 
         mOffset = gameObject.transform.position - GetFingerAsWorldPoint();
         if (this.gameObject.layer == 9) {
-            TI.hasPhoto = true;
-            TI.hadPhoto = true;
+            GM.hasPhoto = true;
+            GM.hadPhoto = true;
+            GM.photoObj = this.gameObject;
         }
     }
 
@@ -38,7 +43,7 @@ public class Catch : MonoBehaviour
 
     void OnMouseUp() {
         if (this.gameObject.layer == 9) {
-            TI.hasPhoto = false;
+            GM.hasPhoto = false;
         }
     }
 

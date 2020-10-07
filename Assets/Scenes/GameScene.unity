@@ -135,7 +135,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40919614}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 50.57275, y: 13.584097, z: 79.264305}
@@ -1056,7 +1056,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892549683}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 50.57275, y: 13.584097, z: 79.264305}
@@ -2091,6 +2091,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456816e38a565d941b79e2fa8873add5, type: 3}
+--- !u!1 &1454471539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7680494630265478321, guid: bdd5fe7d16c8b5f43913ed0383df066a,
+    type: 3}
+  m_PrefabInstance: {fileID: 885130054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1454471540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454471539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 314.57013, y: 67.76542, z: 2.000006}
+  m_Center: {x: -25.202166, y: 111.7248, z: -45.76024}
 --- !u!1 &1485504634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,7 +2403,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577749883}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 50.57275, y: 13.584097, z: 79.264305}
@@ -2954,17 +2973,17 @@ PrefabInstance:
     - target: {fileID: 5233521454772313431, guid: c096aff32e945234781aa49e03d8bce2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.64
+      value: -2.561
       objectReference: {fileID: 0}
     - target: {fileID: 5233521454772313431, guid: c096aff32e945234781aa49e03d8bce2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 1.029
       objectReference: {fileID: 0}
     - target: {fileID: 5233521454772313431, guid: c096aff32e945234781aa49e03d8bce2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.382
+      value: 4.499
       objectReference: {fileID: 0}
     - target: {fileID: 5233521454772313431, guid: c096aff32e945234781aa49e03d8bce2,
         type: 3}

@@ -69,41 +69,120 @@ public class GameManager : MonoBehaviour
                     {
                         if (hitRay.collider != null)
                         {
-                            //hitRay.collider.GetComponent<MeshRenderer>().material.color = new Color(0, 1, 1, 1);
+                            PhotoScript ps = heldPhoto.GetComponent<PhotoScript>();
                             //player has photo and released on enlarger
                             if (hitRay.transform.gameObject.layer == 10) {
-                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
-                                
-                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                                //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                if (ps.stage == 0)
+                                {
+                                    //put timer code here
+
+                                    //advance stage of photo
+                                    ps.stage++;
+                                    //put photo in specific spot
+                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                }
                             }
                             //collided with bath 1
                             else if (hitRay.transform.gameObject.layer == 11) {
-                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                if (ps.stage == 1)
+                                {
+                                    //put timer code here
 
-                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                                    //advance stage of photo
+                                    ps.stage++;
+                                    //put photo in specific spot 
+                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                }
                             }
                             //collided with bath 2
                             else if (hitRay.transform.gameObject.layer == 12) {
-                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                if (ps.stage == 2)
+                                {
+                                    //put timer code here
 
-                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                                    //advance stage of photo
+                                    ps.stage++;
+                                    //put photo in specific spot 
+                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                }
                             }
                             //collided with bath 3
                             else if (hitRay.transform.gameObject.layer == 13) {
-                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                if (ps.stage == 3)
+                                {
+                                    //put timer code here
 
-                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                                    //advance stage of photo
+                                    ps.stage++;
+                                    //put photo in specific spot 
+                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                }
                             }
                             //collided with wire
                             else if (hitRay.transform.gameObject.layer == 14) {
-                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
-
-                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                                //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                if (ps.stage == 4)
+                                {
+                                    //advance stage of photo
+                                    ps.stage++;
+                                    //put photo in specific spot 
+                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                    heldPhoto.transform.eulerAngles = new Vector3(-90, 0 , 0);
+                                    heldPhoto.GetComponent<Rigidbody>().useGravity = false;
+                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                                }
                             }
                         }
                     }
                 }
             }
+        }
+    }
+
+    public Vector3 PositionPhoto(int PhotoID, int stage) {
+        switch (stage) {
+            //after enlargment
+            case 1:
+                return new Vector3(-3.763f, .63f, 4.396f);
+            //after first bath
+            case 2:
+                return new Vector3(-3.397f, .67f, 4.434f);
+            //after second bath
+            case 3:
+                return new Vector3(-3.23f, .67f, 4.434f);
+            //after third bath
+            case 4:
+                return new Vector3(-3.0587f, .67f, 4.4299f);
+            //final spot - based off ID - each one gets a specific spot on the wire
+            case 5:
+                switch (PhotoID) {
+                    case 0:
+                        return new Vector3(-3.7667f, 0.9095f, 4.9004f);
+                    case 1:
+                        return new Vector3(-3.3961f, 0.9563f, 4.8615f);
+                    case 2:
+                        return new Vector3(-3.207f, 0.9321f, 4.899f);
+                    case 3:
+                        return new Vector3(-2.808f, 0.884f, 4.888f);
+                    case 4:
+                        return new Vector3(-2.925f, 1.029f, 4.812f);
+                }
+                return new Vector3();
+            default:
+                return new Vector3();
         }
     }
 }

@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         _light.color = startColor;
         float yVal = .65f;
         for (int i=0; i<numPhotos; i++) {
-            Instantiate(photoObj, new Vector3(-3.7f, yVal, 4.7f), Quaternion.identity);
+            Instantiate(photoObj, new Vector3(-3.64f, yVal, 4.382f), Quaternion.identity);
             yVal += .05f;
             photoObj.GetComponent<PhotoScript>().id = i;
             photoObj.GetComponent<PhotoScript>().stage = 0;

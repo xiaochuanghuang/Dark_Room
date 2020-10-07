@@ -16,11 +16,13 @@ public class GameManager : MonoBehaviour
     public bool hadPhoto = false;
 
     public GameObject photoObj;
+    public GameObject heldPhoto;
 
-    public List<GameObject> photoList;
+    //public List<GameObject> photoList;
 
     private void Start() {
-        photoList = new List<GameObject>();
+        heldPhoto = null;
+        //photoList = new List<GameObject>();
         _light.color = startColor;
         float yVal = .65f;
         for (int i=0; i<numPhotos; i++) {
@@ -30,8 +32,6 @@ public class GameManager : MonoBehaviour
             photoObj.GetComponent<PhotoScript>().stage = 0;
         }
     }
-
-    
 
     //public GameObject particle;
     void Update() {
@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
                             }
                         }
                     }
-                    //Instantiate(particle, transform.position, transform.rotation);
                 }
             }
 
@@ -74,9 +73,34 @@ public class GameManager : MonoBehaviour
                             //player has photo and released on enlarger
                             if (hitRay.transform.gameObject.layer == 10) {
                                 hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                
+                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                            }
+                            //collided with bath 1
+                            else if (hitRay.transform.gameObject.layer == 11) {
+                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+
+                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                            }
+                            //collided with bath 2
+                            else if (hitRay.transform.gameObject.layer == 12) {
+                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+
+                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                            }
+                            //collided with bath 3
+                            else if (hitRay.transform.gameObject.layer == 13) {
+                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+
+                                heldPhoto.GetComponent<PhotoScript>().stage++;
+                            }
+                            //collided with wire
+                            else if (hitRay.transform.gameObject.layer == 14) {
+                                hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+
+                                heldPhoto.GetComponent<PhotoScript>().stage++;
                             }
                         }
-                        //Instantiate(particle, transform.position, transform.rotation);
                     }
                 }
             }

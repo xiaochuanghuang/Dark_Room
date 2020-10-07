@@ -20,7 +20,7 @@ public class Catch : MonoBehaviour
         if (this.gameObject.layer == 9) {
             GM.hasPhoto = true;
             GM.hadPhoto = true;
-            GM.photoObj = this.gameObject;
+            GM.heldPhoto = this.gameObject;
         }
     }
 

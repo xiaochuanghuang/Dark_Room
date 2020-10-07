@@ -14,14 +14,17 @@ public class GameManager : MonoBehaviour
 
     public bool hasPhoto = false;
     public bool hadPhoto = false;
+    public bool previewingPhoto = false;
 
     public GameObject photoObj;
     public GameObject heldPhoto;
+    public GameObject textObj;
 
-    //public List<GameObject> photoList;
+    private Vector3 oldPhotoPos;
 
     private void Start() {
         heldPhoto = null;
+        textObj.SetActive(false);
         //photoList = new List<GameObject>();
         _light.color = startColor;
         float yVal = .65f;
@@ -145,10 +148,49 @@ public class GameManager : MonoBehaviour
                                     heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                                 }
                             }
+
+                            if (hitRay.transform.gameObject.layer == 9 && heldPhoto.GetComponent<PhotoScript>().stage == 5)
+                            {
+                                if (previewingPhoto)
+                                {
+                                    previewingPhoto = false;
+                                    hitRay.transform.position = oldPhotoPos;
+                                    textObj.SetActive(false);
+                                }
+                                else
+                                {
+                                    previewingPhoto = true;
+                                    oldPhotoPos = hitRay.transform.position;
+                                    hitRay.transform.position = new Vector3(-3.55f, 0.8f, 4.37f);
+                                    textObj.SetActive(true);
+                                    changePreviewDescription(heldPhoto.GetComponent<PhotoScript>().id);
+                                }
+                            }
                         }
                     }
                 }
             }
+        }
+    }
+
+    void changePreviewDescription(int photoID) {
+        switch (photoID)
+        {
+            case 0:
+                textObj.GetComponent<TextMeshPro>().text = "Description 1!!!!!!!";
+                break;
+            case 1:
+                textObj.GetComponent<TextMeshPro>().text = "Description 2!!!!!!!";
+                break;
+            case 2:
+                textObj.GetComponent<TextMeshPro>().text = "Description 3!!!!!!!";
+                break;
+            case 3:
+                textObj.GetComponent<TextMeshPro>().text = "Description 4!!!!!!!";
+                break;
+            case 4:
+                textObj.GetComponent<TextMeshPro>().text = "Description 5!!!!!!!";
+                break;
         }
     }
 

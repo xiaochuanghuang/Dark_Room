@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     private Vector3 oldPhotoPos;
 
+    float t = 5;
+
     private void Start() {
         heldPhoto = null;
         textObj.SetActive(false);
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour
                                     //put timer code here
 
                                     //advance stage of photo
+                                    
                                     ps.stage++;
                                     //put photo in specific spot
                                     heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -93,44 +96,44 @@ public class GameManager : MonoBehaviour
                                 //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
                                 if (ps.stage == 1)
                                 {
+                                    
                                     //put timer code here
-
+                                    heldPhoto.GetComponent<Rigidbody>().isKinematic = true;
                                     //advance stage of photo
-                                    ps.stage++;
-                                    //put photo in specific spot 
-                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                    StartCoroutine(counter(ps));
                                 }
                             }
                             //collided with bath 2
                             else if (hitRay.transform.gameObject.layer == 12) {
                                 //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                
                                 if (ps.stage == 2)
                                 {
                                     //put timer code here
 
                                     //advance stage of photo
-                                    ps.stage++;
+                                   
                                     //put photo in specific spot 
-                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                    heldPhoto.GetComponent<Rigidbody>().isKinematic = true;
+                                    //advance stage of photo
+                                    StartCoroutine(counter(ps));
                                 }
                             }
                             //collided with bath 3
                             else if (hitRay.transform.gameObject.layer == 13) {
                                 //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
+                                
+                                
                                 if (ps.stage == 3)
                                 {
                                     //put timer code here
 
                                     //advance stage of photo
-                                    ps.stage++;
+                                    
                                     //put photo in specific spot 
-                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                    heldPhoto.GetComponent<Rigidbody>().isKinematic = true;
+                                    //advance stage of photo
+                                    StartCoroutine(counter(ps));
                                 }
                             }
                             //collided with wire
@@ -139,7 +142,10 @@ public class GameManager : MonoBehaviour
                                 if (ps.stage == 4)
                                 {
                                     //advance stage of photo
-                                    ps.stage++;
+
+                                        ps.stage++;
+                                   
+                                    
                                     //put photo in specific spot 
                                     heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
                                     heldPhoto.transform.eulerAngles = new Vector3(-90, 0 , 0);
@@ -227,4 +233,16 @@ public class GameManager : MonoBehaviour
                 return new Vector3();
         }
     }
+    IEnumerator counter(PhotoScript ps) {
+
+        yield return new WaitForSeconds(3);
+        ps.stage++;
+        //put photo in specific spot 
+        heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+
+        heldPhoto.GetComponent<Rigidbody>().isKinematic = false;
+    }
+
 }

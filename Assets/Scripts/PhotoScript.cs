@@ -8,6 +8,8 @@ public class PhotoScript : MonoBehaviour
 
     public int id;
     public int stage;
+    //float t = 5;
+  
     // Start is called before the first frame update
     void Start() {
 
@@ -23,7 +25,8 @@ public class PhotoScript : MonoBehaviour
                 break;
             case 1:
                 //photo is enlarged
-                EnlargePic(id);
+               
+                    EnlargePic(id);
                 break;
             case 2:
                 //first bath
@@ -143,4 +146,8 @@ public class PhotoScript : MonoBehaviour
                 break;
         }
     }
+    //IEnumerator timer() {
+    //    yield return new WaitForSeconds(5);
+    
+    //}
 }

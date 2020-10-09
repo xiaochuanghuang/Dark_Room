@@ -22,20 +22,23 @@ public class GameManager : MonoBehaviour
 
     private Vector3 oldPhotoPos;
 
-    float t = 5;
+    //float t = 5;
 
     private void Start() {
         heldPhoto = null;
         textObj.SetActive(false);
-        //photoList = new List<GameObject>();
         _light.color = startColor;
-        float yVal = .65f;
-        for (int i=0; i<numPhotos; i++) {
+        //hard coded spawning of one item
+        Instantiate(photoObj, new Vector3(-3.64f, .65f, 4.382f), Quaternion.identity);
+        photoObj.GetComponent<PhotoScript>().id = 0;
+        photoObj.GetComponent<PhotoScript>().stage = 0;
+        //use this to spawn multiple photos - don't  delete
+        /*for (int i=0; i<numPhotos; i++) {
             Instantiate(photoObj, new Vector3(-3.64f, yVal, 4.382f), Quaternion.identity);
             yVal += .05f;
             photoObj.GetComponent<PhotoScript>().id = i;
             photoObj.GetComponent<PhotoScript>().stage = 0;
-        }
+        }*/
     }
 
     //public GameObject particle;
@@ -183,13 +186,13 @@ public class GameManager : MonoBehaviour
         switch (photoID)
         {
             case 0:
-                textObj.GetComponent<TextMeshPro>().text = "Description 1!!!!!!!";
+                textObj.GetComponent<TextMeshPro>().text = "The Bonytail Chub is native to the mountain west states, and is categorized as critically endangered. Because of invasive, non-native fish and habitat alterations its population continues to shrink despite nearly 40 years of conservation efforts.";
                 break;
             case 1:
-                textObj.GetComponent<TextMeshPro>().text = "Description 2!!!!!!!";
+                textObj.GetComponent<TextMeshPro>().text = "The Utah Prairie Dog has been categorized as threatened since 1984. They are at risk from human urban expansion, invasive plants and climate change. Despite efforts to relocate the species, 70% of Utah Prairie Dogs reside on private lands.";
                 break;
             case 2:
-                textObj.GetComponent<TextMeshPro>().text = "Description 3!!!!!!!";
+                textObj.GetComponent<TextMeshPro>().text = "The Gunnison Grouse is native to Colorado and Utah, and has been listed as endangered since 2014. It is estimated that there are less than 5,000 Gunnison Grouse in existence, with 85% of the species living in the Gunnison Basin.";
                 break;
             case 3:
                 textObj.GetComponent<TextMeshPro>().text = "Description 4!!!!!!!";
@@ -204,7 +207,7 @@ public class GameManager : MonoBehaviour
         switch (stage) {
             //after enlargment
             case 1:
-                return new Vector3(-3.763f, .63f, 4.396f);
+                return new Vector3(-3.978f, .652f, 4.398f);
             //after first bath
             case 2:
                 return new Vector3(-3.397f, .67f, 4.434f);
@@ -218,7 +221,7 @@ public class GameManager : MonoBehaviour
             case 5:
                 switch (PhotoID) {
                     case 0:
-                        return new Vector3(-3.7667f, 0.9095f, 4.9004f);
+                        return new Vector3(-3.3538f, 0.9536f, 4.858f);
                     case 1:
                         return new Vector3(-3.3961f, 0.9563f, 4.8615f);
                     case 2:

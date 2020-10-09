@@ -1091,11 +1091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The greater sage-grouse, also known as the sagehen, is the largest grouse
-    in North America. Its range is sagebrush country in the western United States
-    and southern Alberta and Saskatchewan, Canada. It was known as simply the sage
-    grouse until the Gunnison sage-grouse was recognized as a separate species in
-    2000.
+  m_text: test
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1164,12 +1160,12 @@ MonoBehaviour:
   m_margin: {x: 7.7434793, y: 1.5584198, z: 10.805959, w: 2.012375}
   m_textInfo:
     textComponent: {fileID: 483738736}
-    characterCount: 314
+    characterCount: 4
     spriteCount: 0
-    spaceCount: 50
-    wordCount: 51
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 11
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1219,7 +1215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.517, y: 0.806}
+  m_AnchoredPosition: {x: -2.755, y: 0.806}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &544430758
@@ -1412,7 +1408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643848163}
   m_LocalRotation: {x: 0.0033500204, y: 0.000441894, z: 0.08204386, w: 0.99662304}
-  m_LocalPosition: {x: 276.3, y: -19.4, z: -18.941484}
+  m_LocalPosition: {x: 276.3, y: -19.4, z: -14.6}
   m_LocalScale: {x: 1.0341, y: 1.0341, z: 1.0341}
   m_Children: []
   m_Father: {fileID: 1245477693}
@@ -2575,7 +2571,7 @@ PrefabInstance:
     - target: {fileID: 569423255238642033, guid: c096aff32e945234781aa49e03d8bce2,
         type: 3}
       propertyPath: id
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 569423255238642033, guid: c096aff32e945234781aa49e03d8bce2,
         type: 3}
@@ -3115,7 +3111,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207409700}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 50.008537, y: 4.6540985, z: 50.000893}
@@ -3826,7 +3822,7 @@ MonoBehaviour:
   startColor: {r: 1, g: 0.87299204, b: 0.6273585, a: 0}
   darkRoomColor: {r: 0.5566038, g: 0.16540584, b: 0.16540584, a: 0}
   _light: {fileID: 705507994}
-  numPhotos: 5
+  numPhotos: 1
   hasPhoto: 0
   hadPhoto: 0
   previewingPhoto: 0
@@ -5061,7 +5057,7 @@ PrefabInstance:
     - target: {fileID: 569423255238642033, guid: c096aff32e945234781aa49e03d8bce2,
         type: 3}
       propertyPath: id
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 569423255238642033, guid: c096aff32e945234781aa49e03d8bce2,
         type: 3}

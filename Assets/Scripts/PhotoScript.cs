@@ -8,11 +8,19 @@ public class PhotoScript : MonoBehaviour
 
     public int id;
     public int stage;
-    //float t = 5;
-  
-    // Start is called before the first frame update
-    void Start() {
+    Renderer rend;
 
+    public Material[] textures;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        if (stage == 0)
+        {
+            rend = GetComponent<Renderer>();
+            rend.enabled = true;
+            rend.sharedMaterial = textures[0];
+        }
     }
 
     // Update is called once per frame
@@ -25,8 +33,7 @@ public class PhotoScript : MonoBehaviour
                 break;
             case 1:
                 //photo is enlarged
-               
-                    EnlargePic(id);
+                EnlargePic(id);
                 break;
             case 2:
                 //first bath
@@ -51,6 +58,8 @@ public class PhotoScript : MonoBehaviour
         switch (picID) {
             case 0:
                 this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 0, 1);
+                //change to negative
+                rend.sharedMaterial = textures[1];
                 break;
             case 1:
                 this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 0, 1);
@@ -70,7 +79,8 @@ public class PhotoScript : MonoBehaviour
     void FirstBath(int picID) {
         switch (picID) {
             case 0:
-                this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1, 1);
+                //change to high blur
+                rend.sharedMaterial = textures[2];
                 break;
             case 1:
                 this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1, 1);
@@ -90,7 +100,8 @@ public class PhotoScript : MonoBehaviour
     void SecondBath(int picID) {
         switch (picID) {
             case 0:
-                this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 1);
+                //change to low blur
+                rend.sharedMaterial = textures[3];
                 break;
             case 1:
                 this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 1);
@@ -110,7 +121,8 @@ public class PhotoScript : MonoBehaviour
     void ThirdBath(int picID) {
         switch (picID) {
             case 0:
-                this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 1);
+                //change to picture
+                rend.sharedMaterial = textures[4];
                 break;
             case 1:
                 this.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 1);
@@ -130,24 +142,21 @@ public class PhotoScript : MonoBehaviour
     void HangingPicture(int picID) {
         switch (picID) {
             case 0:
-                this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+                //this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+                rend.sharedMaterial = textures[4];
                 break;                       
             case 1:                          
-                this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+                //this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
                 break;                                                              
             case 2:                                                                 
-                this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+                //this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
                 break;                                                              
             case 3:                                                                 
-                this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+                //this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
                 break;                                                             
             case 4:                                                                
-                this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+                //this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
                 break;
         }
     }
-    //IEnumerator timer() {
-    //    yield return new WaitForSeconds(5);
-    
-    //}
 }

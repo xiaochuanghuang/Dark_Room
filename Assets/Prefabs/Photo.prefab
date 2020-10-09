@@ -139,3 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   stage: 0
+  textures:
+  - {fileID: 2100000, guid: b6ed4a2effa0afb4d81e0091aa6126f4, type: 2}
+  - {fileID: 2100000, guid: efa7f7253c934c644b7ffb3ff91b4e83, type: 2}
+  - {fileID: 2100000, guid: ba4c7041a35202c42ae811395e97a553, type: 2}
+  - {fileID: 2100000, guid: b872a4653efb6fe4bb76b1d7f01566a5, type: 2}
+  - {fileID: 2100000, guid: 855562e607c406341859f727020c7c93, type: 2}

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Light _light;
     public int numPhotos;
 
+    public AudioSource src;
+
     public bool hasPhoto = false;
     public bool hadPhoto = false;
     public bool previewingPhoto = false;
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     //float t = 5;
 
     private void Start() {
+        src.volume = 0.5f;
+        src.time = 1f;
         heldPhoto = null;
         textObj.SetActive(false);
         _light.color = startColor;
@@ -83,15 +87,12 @@ public class GameManager : MonoBehaviour
                                 //hitRay.transform.gameObject.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
                                 if (ps.stage == 0)
                                 {
-                                    //put timer code here
 
+                                    //src.Play();
+                                    //put timer code here
+                                    heldPhoto.GetComponent<Rigidbody>().isKinematic = true;
                                     //advance stage of photo
-                                    
-                                    ps.stage++;
-                                    //put photo in specific spot
-                                    heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                                    heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                                    heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
+                                    StartCoroutine(counter(ps));
                                 }
                             }
                             //collided with bath 1
@@ -147,7 +148,7 @@ public class GameManager : MonoBehaviour
                                     //advance stage of photo
 
                                         ps.stage++;
-                                   
+                                        //src.Play();
                                     
                                     //put photo in specific spot 
                                     heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
@@ -239,7 +240,9 @@ public class GameManager : MonoBehaviour
     IEnumerator counter(PhotoScript ps) {
 
         yield return new WaitForSeconds(3);
+
         ps.stage++;
+        src.Play();
         //put photo in specific spot 
         heldPhoto.GetComponent<Rigidbody>().velocity = Vector3.zero;
         heldPhoto.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;

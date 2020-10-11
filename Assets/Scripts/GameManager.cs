@@ -147,9 +147,12 @@ public class GameManager : MonoBehaviour
                                 {
                                     //advance stage of photo
 
-                                        ps.stage++;
-                                        //src.Play();
                                     
+                                    ps.stage++;
+                                    src.PlayDelayed(2);
+                                    src.Play();
+                                    //src.Play();
+
                                     //put photo in specific spot 
                                     heldPhoto.transform.position = PositionPhoto(ps.id, ps.stage);
                                     heldPhoto.transform.eulerAngles = new Vector3(-90, 0 , 0);

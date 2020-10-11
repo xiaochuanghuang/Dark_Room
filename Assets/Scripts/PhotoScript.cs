@@ -23,6 +23,8 @@ public class PhotoScript : MonoBehaviour
             rend = GetComponent<Renderer>();
             rend.enabled = true;
             rend.sharedMaterial = textures[0];
+            lightError = false;
+            otherError = false;
         }
     }
 

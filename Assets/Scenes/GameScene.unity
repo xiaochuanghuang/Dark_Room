@@ -3950,7 +3950,7 @@ MonoBehaviour:
   darkRoomColor: {r: 0.5566038, g: 0.16540584, b: 0.16540584, a: 0}
   _light: {fileID: 705507994}
   numPhotos: 1
-  src: {fileID: 0}
+  src: {fileID: 507730740}
   hasPhoto: 0
   hadPhoto: 0
   previewingPhoto: 0

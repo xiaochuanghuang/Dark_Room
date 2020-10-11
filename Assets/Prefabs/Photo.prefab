@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8b7422fc557814393cddb0fc1bee63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 4
+  id: 0
   stage: 0
   textures:
   - {fileID: 2100000, guid: b6ed4a2effa0afb4d81e0091aa6126f4, type: 2}
@@ -145,3 +145,5 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ba4c7041a35202c42ae811395e97a553, type: 2}
   - {fileID: 2100000, guid: b872a4653efb6fe4bb76b1d7f01566a5, type: 2}
   - {fileID: 2100000, guid: 855562e607c406341859f727020c7c93, type: 2}
+  - {fileID: 2100000, guid: 0623dcd7d7a0d7540a8b330ee2ca7a78, type: 2}
+  - {fileID: 2100000, guid: 53e377c6125c74440b9796a6da4d577a, type: 2}

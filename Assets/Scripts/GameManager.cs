@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     public bool hasPhoto = false;
     public bool hadPhoto = false;
     public bool previewingPhoto = false;
+    public bool DarkRoomlightsOn = false;
 
     public GameObject photoObj;
     public GameObject heldPhoto;
@@ -58,14 +61,21 @@ public class GameManager : MonoBehaviour
                         //hitRay.collider.GetComponent<MeshRenderer>().material.color = new Color(0, 1, 1, 1);
                         if (hitRay.transform.gameObject.layer == 8) {
                             Debug.Log("Player tapped light switch");
+                            
                             if (_light.color == startColor)
                             {
                                 _light.color = darkRoomColor;
+                                DarkRoomlightsOn = true;
                             }
                             else {
                                 _light.color = startColor;
+                                DarkRoomlightsOn = false;
                             }
                         }
+                    }
+                    //if it hits the reset button reload the scene
+                    if (hitRay.transform.gameObject.layer == 16) {
+                        SceneManager.LoadScene(1);
                     }
                 }
             }

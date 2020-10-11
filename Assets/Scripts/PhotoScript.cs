@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PhotoScript : MonoBehaviour
@@ -8,6 +9,8 @@ public class PhotoScript : MonoBehaviour
 
     public int id;
     public int stage;
+    public bool lightError = false;
+    public bool otherError = false;
     Renderer rend;
 
     public Material[] textures;
@@ -143,7 +146,17 @@ public class PhotoScript : MonoBehaviour
         switch (picID) {
             case 0:
                 //this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
-                rend.sharedMaterial = textures[4];
+                if (lightError)
+                {
+                    rend.sharedMaterial = textures[5];
+                }
+                else if (otherError)
+                {
+                    rend.sharedMaterial = textures[6];
+                }
+                else {
+                    rend.sharedMaterial = textures[4];
+                }
                 break;                       
             case 1:                          
                 //this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);

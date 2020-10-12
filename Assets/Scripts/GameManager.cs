@@ -235,10 +235,10 @@ public class GameManager : MonoBehaviour
                 textObj.GetComponent<TextMeshPro>().text = "The Gunnison Grouse is native to Colorado and Utah, and has been listed as endangered since 2014. It is estimated that there are less than 5,000 Gunnison Grouse in existence, with 85% of the species living in the Gunnison Basin.";
                 break;
             case 3:
-                textObj.GetComponent<TextMeshPro>().text = "Description 4!!!!!!!";
+                //textObj.GetComponent<TextMeshPro>().text = "Description 4!!!!!!!";
                 break;
             case 4:
-                textObj.GetComponent<TextMeshPro>().text = "Description 5!!!!!!!";
+                //textObj.GetComponent<TextMeshPro>().text = "Description 5!!!!!!!";
                 break;
         }
     }

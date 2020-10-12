@@ -261,7 +261,7 @@ public class GameManager : MonoBehaviour
             case 5:
                 switch (PhotoID) {
                     case 0:
-                        return new Vector3(-3.3541f, .9783f, 4.858f);
+                        return new Vector3(-3.806f, 0.92f, 4.902f);
                     case 1:
                         return new Vector3(-3.3961f, 0.9563f, 4.8615f);
                     case 2:

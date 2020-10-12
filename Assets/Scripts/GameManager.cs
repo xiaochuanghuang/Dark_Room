@@ -199,7 +199,7 @@ public class GameManager : MonoBehaviour
                                 {
                                     previewingPhoto = true;
                                     oldPhotoPos = hitRay.transform.position;
-                                    hitRay.transform.position = new Vector3(-3.55f, 0.8f, 4.37f);
+                                    hitRay.transform.position = new Vector3(-3.55f, 0.82f, 4.37f);
                                     textObj.SetActive(true);
                                     changePreviewDescription(heldPhoto.GetComponent<PhotoScript>().id);
                                 }

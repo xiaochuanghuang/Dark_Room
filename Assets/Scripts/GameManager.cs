@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         textObj.SetActive(false);
         _light.color = startColor;
         //hard coded spawning of one item
-        Instantiate(photoObj, new Vector3(-3.64f, .65f, 4.382f), Quaternion.identity);
+        Instantiate(photoObj, new Vector3(-3.74f, .65f, 4.382f), Quaternion.identity);
         photoObj.GetComponent<PhotoScript>().id = 0;
         photoObj.GetComponent<PhotoScript>().stage = 0;
         //use this to spawn multiple photos - don't  delete
